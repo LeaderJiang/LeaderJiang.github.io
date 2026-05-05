@@ -22,7 +22,7 @@ const theme = createTheme({
     divider: alpha('#8ec5ff', 0.14),
   },
   shape: {
-    borderRadius: 22,
+    borderRadius: 10,
   },
   typography: {
     fontFamily: '"Rajdhani", "Segoe UI", sans-serif',
@@ -69,7 +69,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
-          borderRadius: 999,
+          borderRadius: 10,
           paddingInline: 22,
           paddingBlock: 12,
           transition: 'transform 180ms ease, box-shadow 180ms ease',
@@ -87,13 +87,15 @@ const theme = createTheme({
           backdropFilter: 'blur(18px)',
           border: `1px solid ${alpha('#89c7ff', 0.08)}`,
           boxShadow: `0 14px 48px ${alpha('#020817', 0.3)}`,
+          clipPath:
+            'polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px))',
         },
       },
     },
     MuiChip: {
       styleOverrides: {
         root: {
-          borderRadius: 999,
+          borderRadius: 8,
           fontWeight: 700,
           letterSpacing: '0.04em',
         },

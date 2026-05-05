@@ -79,36 +79,11 @@ export default function App() {
         <Stack spacing={3}>
           <Box
             sx={{
-              overflow: 'hidden',
               position: 'relative',
               px: { xs: 0.5, md: 1.5 },
               py: { xs: 2, md: 4 },
             }}
           >
-            <Box
-              sx={{
-                position: 'absolute',
-                top: -120,
-                right: -40,
-                width: 320,
-                height: 320,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(103,232,249,0.26), transparent 68%)',
-                filter: 'blur(10px)',
-              }}
-            />
-            <Box
-              sx={{
-                position: 'absolute',
-                bottom: -140,
-                left: -20,
-                width: 280,
-                height: 280,
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(124,58,237,0.22), transparent 66%)',
-                filter: 'blur(12px)',
-              }}
-            />
             <Stack spacing={4} sx={{ position: 'relative', zIndex: 1 }}>
               <Stack
                 direction={{ xs: 'column', md: 'row' }}
@@ -193,10 +168,12 @@ export default function App() {
                   <Paper
                     sx={{
                       p: 3,
-                      borderRadius: 6,
-                      background: alpha('#081120', 0.42),
+                      borderRadius: 1.25,
+                      background: alpha('#081120', 0.28),
                       backdropFilter: 'blur(18px)',
                       border: `1px solid ${alpha('#67e8f9', 0.12)}`,
+                      clipPath:
+                        'polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px))',
                     }}
                   >
                     <Stack spacing={2}>
@@ -236,8 +213,8 @@ export default function App() {
               <Card
                 id="projects"
                 sx={{
-                  borderRadius: 7,
-                  background: alpha('#091326', 0.22),
+                  borderRadius: 1.5,
+                  background: alpha('#091326', 0.14),
                 }}
               >
                 <CardContent sx={{ p: { xs: 3, md: 4 } }}>
@@ -256,26 +233,11 @@ export default function App() {
                       <Card
                         sx={{
                           height: '100%',
-                          borderRadius: 6,
+                          borderRadius: 1.25,
                           background:
-                            'linear-gradient(135deg, rgba(10,18,38,0.68) 0%, rgba(12,28,58,0.5) 45%, rgba(20,49,98,0.38) 100%)',
-                          position: 'relative',
-                          overflow: 'hidden',
+                            'linear-gradient(135deg, rgba(10,18,38,0.42) 0%, rgba(12,28,58,0.36) 45%, rgba(20,49,98,0.22) 100%)',
                         }}
                       >
-                        <Box
-                          sx={{
-                            position: 'absolute',
-                            top: -60,
-                            right: -40,
-                            width: 220,
-                            height: 220,
-                            borderRadius: '50%',
-                            background:
-                              'radial-gradient(circle, rgba(103,232,249,0.24), transparent 70%)',
-                            filter: 'blur(10px)',
-                          }}
-                        />
                         <CardContent sx={{ p: { xs: 3, md: 4 } }}>
                           <Stack spacing={2.5}>
                             <Stack
@@ -329,8 +291,8 @@ export default function App() {
                                   <Box
                                     sx={{
                                       p: 2,
-                                      borderRadius: 4,
-                                      bgcolor: alpha('#081120', 0.42),
+                                      borderRadius: 1,
+                                      bgcolor: alpha('#081120', 0.22),
                                       border: `1px solid ${alpha('#8ec5ff', 0.08)}`,
                                     }}
                                   >
@@ -351,8 +313,8 @@ export default function App() {
                       <Stack spacing={2.5} sx={{ height: '100%' }}>
                         <Card
                           sx={{
-                            borderRadius: 6,
-                            background: alpha('#0b152b', 0.32),
+                            borderRadius: 1.25,
+                            background: alpha('#0b152b', 0.18),
                           }}
                         >
                           <CardContent sx={{ p: 3 }}>
@@ -371,8 +333,8 @@ export default function App() {
                         <Card
                           sx={{
                             flexGrow: 1,
-                            borderRadius: 6,
-                            background: alpha('#081120', 0.3),
+                            borderRadius: 1.25,
+                            background: alpha('#081120', 0.16),
                             borderStyle: 'dashed',
                           }}
                         >
@@ -400,8 +362,8 @@ export default function App() {
                         <Card
                           sx={{
                             height: '100%',
-                            borderRadius: 6,
-                            background: alpha('#0b152b', 0.28),
+                            borderRadius: 1.25,
+                            background: alpha('#0b152b', 0.16),
                           }}
                         >
                           <CardContent sx={{ p: 3 }}>
@@ -434,7 +396,7 @@ export default function App() {
 
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack spacing={3}>
-                <Card sx={{ borderRadius: 7, background: alpha('#091326', 0.22) }}>
+                <Card sx={{ borderRadius: 1.5, background: alpha('#091326', 0.14) }}>
                   <CardContent sx={{ p: 3 }}>
                     <Stack spacing={2}>
                       <Typography variant="overline" color="primary.light">
@@ -451,7 +413,7 @@ export default function App() {
                   </CardContent>
                 </Card>
 
-                <Card sx={{ borderRadius: 7, background: alpha('#091326', 0.22) }}>
+                <Card sx={{ borderRadius: 1.5, background: alpha('#091326', 0.14) }}>
                   <CardContent sx={{ p: 3 }}>
                     <Stack spacing={2}>
                       <Typography variant="overline" color="primary.light">
