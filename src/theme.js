@@ -83,10 +83,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
-          backgroundColor: alpha('#091326', 0.42),
-          backdropFilter: 'blur(18px)',
-          border: `1px solid ${alpha('#89c7ff', 0.08)}`,
-          boxShadow: `0 14px 48px ${alpha('#020817', 0.3)}`,
+          backgroundColor: 'transparent',
+          backdropFilter: 'none',
+          border: `1px solid ${alpha('#89c7ff', 0.12)}`,
+          boxShadow: 'none',
           clipPath:
             'polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px))',
         },
@@ -98,6 +98,8 @@ const theme = createTheme({
           borderRadius: 8,
           fontWeight: 700,
           letterSpacing: '0.04em',
+          backgroundColor: 'transparent',
+          border: `1px solid ${alpha('#89c7ff', 0.18)}`,
         },
       },
     },

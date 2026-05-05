@@ -20,6 +20,28 @@ import {
   Typography,
 } from '@mui/material'
 
+const frameSx = {
+  position: 'relative',
+  background: 'transparent',
+  border: `1px solid ${alpha('#8ec5ff', 0.12)}`,
+  boxShadow: 'none',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: 56,
+    height: 1,
+    background: alpha('#67e8f9', 0.75),
+  },
+}
+
+const linePanelSx = {
+  background: 'transparent',
+  border: `1px solid ${alpha('#8ec5ff', 0.12)}`,
+  boxShadow: 'none',
+}
+
 const signals = [
   { label: 'Frontend Systems', value: 'React / MUI / UX Engine' },
   { label: 'Current Mode', value: 'Building polished product interfaces' },
@@ -95,9 +117,9 @@ export default function App() {
                   icon={<SensorsIcon />}
                   label="Personal Command Interface"
                   sx={{
-                    bgcolor: alpha('#67e8f9', 0.08),
+                    bgcolor: 'transparent',
                     color: 'primary.light',
-                    border: `1px solid ${alpha('#67e8f9', 0.18)}`,
+                    border: `1px solid ${alpha('#67e8f9', 0.24)}`,
                   }}
                 />
                 <Typography variant="body2" color="text.secondary">
@@ -169,9 +191,7 @@ export default function App() {
                     sx={{
                       p: 3,
                       borderRadius: 1.25,
-                      background: alpha('#081120', 0.28),
-                      backdropFilter: 'blur(18px)',
-                      border: `1px solid ${alpha('#67e8f9', 0.12)}`,
+                      ...frameSx,
                       clipPath:
                         'polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px))',
                     }}
@@ -183,8 +203,9 @@ export default function App() {
                           size="small"
                           label="ACTIVE"
                           sx={{
-                            bgcolor: alpha('#34d399', 0.12),
+                            bgcolor: 'transparent',
                             color: '#7cf6bf',
+                            borderColor: alpha('#34d399', 0.28),
                           }}
                         />
                       </Stack>
@@ -214,7 +235,7 @@ export default function App() {
                 id="projects"
                 sx={{
                   borderRadius: 1.5,
-                  background: alpha('#091326', 0.14),
+                  ...frameSx,
                 }}
               >
                 <CardContent sx={{ p: { xs: 3, md: 4 } }}>
@@ -234,8 +255,7 @@ export default function App() {
                         sx={{
                           height: '100%',
                           borderRadius: 1.25,
-                          background:
-                            'linear-gradient(135deg, rgba(10,18,38,0.42) 0%, rgba(12,28,58,0.36) 45%, rgba(20,49,98,0.22) 100%)',
+                          ...frameSx,
                         }}
                       >
                         <CardContent sx={{ p: { xs: 3, md: 4 } }}>
@@ -258,8 +278,9 @@ export default function App() {
                                 label="Flagship Build"
                                 sx={{
                                   alignSelf: 'flex-start',
-                                  bgcolor: alpha('#67e8f9', 0.12),
+                                  bgcolor: 'transparent',
                                   color: 'primary.light',
+                                  borderColor: alpha('#67e8f9', 0.24),
                                 }}
                               />
                             </Stack>
@@ -279,6 +300,7 @@ export default function App() {
                                     sx={{
                                       bgcolor: alpha('#7c3aed', 0.16),
                                       color: '#d8b4fe',
+                                      borderColor: alpha('#7c3aed', 0.24),
                                     }}
                                   />
                                 </Grid>
@@ -292,8 +314,7 @@ export default function App() {
                                     sx={{
                                       p: 2,
                                       borderRadius: 1,
-                                      bgcolor: alpha('#081120', 0.22),
-                                      border: `1px solid ${alpha('#8ec5ff', 0.08)}`,
+                                      ...linePanelSx,
                                     }}
                                   >
                                     <Typography variant="body2" color="primary.light">
@@ -314,7 +335,7 @@ export default function App() {
                         <Card
                           sx={{
                             borderRadius: 1.25,
-                            background: alpha('#0b152b', 0.18),
+                            ...frameSx,
                           }}
                         >
                           <CardContent sx={{ p: 3 }}>
@@ -334,7 +355,7 @@ export default function App() {
                           sx={{
                             flexGrow: 1,
                             borderRadius: 1.25,
-                            background: alpha('#081120', 0.16),
+                            ...frameSx,
                             borderStyle: 'dashed',
                           }}
                         >
@@ -363,7 +384,7 @@ export default function App() {
                           sx={{
                             height: '100%',
                             borderRadius: 1.25,
-                            background: alpha('#0b152b', 0.16),
+                            ...frameSx,
                           }}
                         >
                           <CardContent sx={{ p: 3 }}>
@@ -380,8 +401,9 @@ export default function App() {
                                 label={project.stack}
                                 sx={{
                                   alignSelf: 'flex-start',
-                                  bgcolor: alpha('#7c3aed', 0.16),
+                                  bgcolor: 'transparent',
                                   color: '#d8b4fe',
+                                  borderColor: alpha('#7c3aed', 0.24),
                                 }}
                               />
                             </Stack>
@@ -396,7 +418,7 @@ export default function App() {
 
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack spacing={3}>
-                <Card sx={{ borderRadius: 1.5, background: alpha('#091326', 0.14) }}>
+                <Card sx={{ borderRadius: 1.5, ...frameSx }}>
                   <CardContent sx={{ p: 3 }}>
                     <Stack spacing={2}>
                       <Typography variant="overline" color="primary.light">
@@ -413,7 +435,7 @@ export default function App() {
                   </CardContent>
                 </Card>
 
-                <Card sx={{ borderRadius: 1.5, background: alpha('#091326', 0.14) }}>
+                <Card sx={{ borderRadius: 1.5, ...frameSx }}>
                   <CardContent sx={{ p: 3 }}>
                     <Stack spacing={2}>
                       <Typography variant="overline" color="primary.light">
