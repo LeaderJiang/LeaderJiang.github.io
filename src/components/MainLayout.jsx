@@ -12,16 +12,17 @@ const navItems = [
 const navLinkSx = {
   px: 1.5,
   py: 0.8,
-  border: '1px solid transparent',
+  borderBottom: '1px solid transparent',
   color: 'text.secondary',
   textDecoration: 'none',
   fontWeight: 700,
   letterSpacing: '0.08em',
   textTransform: 'uppercase',
-  transition: 'border-color 180ms ease, color 180ms ease',
+  transition: 'border-color 180ms ease, color 180ms ease, background-color 180ms ease',
   '&.active': {
     color: 'primary.light',
-    borderColor: alpha('#67e8f9', 0.22),
+    borderBottomColor: alpha('#67e8f9', 0.28),
+    backgroundColor: alpha('#67e8f9', 0.03),
   },
 }
 
@@ -58,7 +59,7 @@ export default function MainLayout() {
                 sx={{
                   bgcolor: 'transparent',
                   color: 'primary.light',
-                  border: `1px solid ${alpha('#67e8f9', 0.24)}`,
+                  border: `1px solid ${alpha('#67e8f9', 0.16)}`,
                 }}
               />
               <Typography variant="body2" color="text.secondary">
@@ -87,9 +88,9 @@ export default function MainLayout() {
                 href="https://github.com/LeaderJiang"
                 sx={{
                   alignSelf: 'flex-start',
-                  borderColor: alpha('#9ed7ff', 0.2),
+                  borderColor: alpha('#9ed7ff', 0.12),
                   color: 'text.primary',
-                  bgcolor: alpha('#091326', 0.12),
+                  bgcolor: 'transparent',
                 }}
               >
                 Open GitHub

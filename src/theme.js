@@ -85,7 +85,7 @@ const theme = createTheme({
           backgroundImage: 'none',
           backgroundColor: 'transparent',
           backdropFilter: 'none',
-          border: `1px solid ${alpha('#89c7ff', 0.12)}`,
+          border: `1px solid ${alpha('#89c7ff', 0.08)}`,
           boxShadow: 'none',
           clipPath:
             'polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px))',
@@ -99,7 +99,7 @@ const theme = createTheme({
           fontWeight: 700,
           letterSpacing: '0.04em',
           backgroundColor: 'transparent',
-          border: `1px solid ${alpha('#89c7ff', 0.18)}`,
+          border: `1px solid ${alpha('#89c7ff', 0.12)}`,
         },
       },
     },
