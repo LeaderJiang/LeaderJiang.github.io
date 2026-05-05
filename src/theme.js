@@ -83,10 +83,10 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
-          backgroundColor: alpha('#091326', 0.72),
+          backgroundColor: alpha('#091326', 0.42),
           backdropFilter: 'blur(18px)',
-          border: `1px solid ${alpha('#89c7ff', 0.14)}`,
-          boxShadow: `0 20px 80px ${alpha('#020817', 0.55)}`,
+          border: `1px solid ${alpha('#89c7ff', 0.08)}`,
+          boxShadow: `0 14px 48px ${alpha('#020817', 0.3)}`,
         },
       },
     },

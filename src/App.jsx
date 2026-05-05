@@ -15,6 +15,7 @@ import {
   Divider,
   Grid,
   Link,
+  Paper,
   Stack,
   Typography,
 } from '@mui/material'
@@ -72,15 +73,14 @@ export default function App() {
         },
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', py: { xs: 3, md: 5 } }}>
+      <Container maxWidth="xl" sx={{ position: 'relative', py: { xs: 3, md: 5 } }}>
         <Stack spacing={3}>
-          <Card
+          <Box
             sx={{
               overflow: 'hidden',
-              borderRadius: 8,
               position: 'relative',
-              background:
-                'linear-gradient(135deg, rgba(8,16,35,0.94) 0%, rgba(9,19,38,0.78) 42%, rgba(18,33,68,0.72) 100%)',
+              px: { xs: 0.5, md: 1.5 },
+              py: { xs: 2, md: 4 },
             }}
           >
             <Box
@@ -107,130 +107,137 @@ export default function App() {
                 filter: 'blur(12px)',
               }}
             />
-            <CardContent sx={{ p: { xs: 3, md: 5 } }}>
-              <Stack spacing={4}>
-                <Stack
-                  direction={{ xs: 'column', md: 'row' }}
-                  justifyContent="space-between"
-                  alignItems={{ xs: 'flex-start', md: 'center' }}
-                  spacing={2}
-                >
-                  <Chip
-                    icon={<SensorsIcon />}
-                    label="Personal Command Interface"
-                    sx={{
-                      bgcolor: alpha('#67e8f9', 0.12),
-                      color: 'primary.light',
-                      border: `1px solid ${alpha('#67e8f9', 0.3)}`,
-                    }}
-                  />
-                  <Typography variant="body2" color="text.secondary">
-                    SIGNAL STATUS / ONLINE / PORTFOLIO NODE
-                  </Typography>
-                </Stack>
-
-                <Grid container spacing={4} alignItems="center">
-                  <Grid size={{ xs: 12, md: 7 }}>
-                    <Stack spacing={2.5}>
-                      <Typography
-                        variant="h1"
-                        sx={{ fontSize: { xs: '2.8rem', md: '5.6rem' }, lineHeight: 0.92 }}
-                      >
-                        LEADER
-                        <br />
-                        JIANG
-                      </Typography>
-                      <Typography
-                        variant="h5"
-                        color="primary.light"
-                        sx={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
-                      >
-                        React Engineer / Interface Architect / Digital Builder
-                      </Typography>
-                      <Typography
-                        variant="body1"
-                        color="text.secondary"
-                        sx={{ maxWidth: 640, fontSize: '1.15rem', lineHeight: 1.75 }}
-                      >
-                        我專注於把想法轉成可部署、可維護、可展示的前端產品。
-                        這個首頁以 SCI-FI 科技感為主軸，將個人品牌、作品敘事與介面美學
-                        收束成一個有辨識度的入口。
-                      </Typography>
-                      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-                        <Button
-                          variant="contained"
-                          startIcon={<RocketLaunchIcon />}
-                          href="#projects"
-                          sx={{
-                            color: '#02111f',
-                            background:
-                              'linear-gradient(135deg, #67e8f9 0%, #7dd3fc 42%, #818cf8 100%)',
-                            boxShadow: `0 12px 40px ${alpha('#67e8f9', 0.24)}`,
-                          }}
-                        >
-                          Explore Projects
-                        </Button>
-                        <Button
-                          variant="outlined"
-                          startIcon={<GitHubIcon />}
-                          href="https://github.com/LeaderJiang"
-                          sx={{
-                            borderColor: alpha('#9ed7ff', 0.28),
-                            color: 'text.primary',
-                            bgcolor: alpha('#091326', 0.42),
-                          }}
-                        >
-                          Open GitHub
-                        </Button>
-                      </Stack>
-                    </Stack>
-                  </Grid>
-
-                  <Grid size={{ xs: 12, md: 5 }}>
-                    <Card
-                      sx={{
-                        borderRadius: 6,
-                        background:
-                          'linear-gradient(180deg, rgba(5,12,28,0.92) 0%, rgba(8,17,36,0.82) 100%)',
-                        border: `1px solid ${alpha('#67e8f9', 0.18)}`,
-                      }}
-                    >
-                      <CardContent sx={{ p: 3 }}>
-                        <Stack spacing={2}>
-                          <Stack direction="row" justifyContent="space-between" alignItems="center">
-                            <Typography variant="h6">SYSTEM SIGNALS</Typography>
-                            <Chip
-                              size="small"
-                              label="ACTIVE"
-                              sx={{
-                                bgcolor: alpha('#34d399', 0.12),
-                                color: '#7cf6bf',
-                              }}
-                            />
-                          </Stack>
-                          {signals.map((item) => (
-                            <Box key={item.label}>
-                              <Typography variant="body2" color="primary.light">
-                                {item.label}
-                              </Typography>
-                              <Typography variant="body1" sx={{ mt: 0.5 }}>
-                                {item.value}
-                              </Typography>
-                              <Divider sx={{ mt: 1.5, borderColor: alpha('#9ed7ff', 0.08) }} />
-                            </Box>
-                          ))}
-                        </Stack>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                </Grid>
+            <Stack spacing={4} sx={{ position: 'relative', zIndex: 1 }}>
+              <Stack
+                direction={{ xs: 'column', md: 'row' }}
+                justifyContent="space-between"
+                alignItems={{ xs: 'flex-start', md: 'center' }}
+                spacing={2}
+              >
+                <Chip
+                  icon={<SensorsIcon />}
+                  label="Personal Command Interface"
+                  sx={{
+                    bgcolor: alpha('#67e8f9', 0.08),
+                    color: 'primary.light',
+                    border: `1px solid ${alpha('#67e8f9', 0.18)}`,
+                  }}
+                />
+                <Typography variant="body2" color="text.secondary">
+                  SIGNAL STATUS / ONLINE / PORTFOLIO NODE
+                </Typography>
               </Stack>
-            </CardContent>
-          </Card>
+
+              <Grid container spacing={{ xs: 4, md: 6 }} alignItems="start">
+                <Grid size={{ xs: 12, md: 8 }}>
+                  <Stack spacing={2.5} sx={{ pt: { md: 2 } }}>
+                    <Typography
+                      variant="h1"
+                      sx={{ fontSize: { xs: '2.8rem', md: '6.8rem' }, lineHeight: 0.88 }}
+                    >
+                      LEADER
+                      <br />
+                      JIANG
+                    </Typography>
+                    <Typography
+                      variant="h5"
+                      color="primary.light"
+                      sx={{ letterSpacing: '0.14em', textTransform: 'uppercase' }}
+                    >
+                      React Engineer / Interface Architect / Digital Builder
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      color="text.secondary"
+                      sx={{ maxWidth: 720, fontSize: '1.15rem', lineHeight: 1.75 }}
+                    >
+                      我專注於把想法轉成可部署、可維護、可展示的前端產品。
+                      這個首頁以 SCI-FI 科技感為主軸，將個人品牌、作品敘事與介面美學
+                      收束成一個有辨識度的入口。
+                    </Typography>
+                    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+                      <Button
+                        variant="contained"
+                        startIcon={<RocketLaunchIcon />}
+                        href="#projects"
+                        sx={{
+                          alignSelf: 'flex-start',
+                          color: '#02111f',
+                          background:
+                            'linear-gradient(135deg, #67e8f9 0%, #7dd3fc 42%, #818cf8 100%)',
+                          boxShadow: `0 12px 40px ${alpha('#67e8f9', 0.24)}`,
+                        }}
+                      >
+                        Explore Projects
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        startIcon={<GitHubIcon />}
+                        href="https://github.com/LeaderJiang"
+                        sx={{
+                          alignSelf: 'flex-start',
+                          borderColor: alpha('#9ed7ff', 0.2),
+                          color: 'text.primary',
+                          bgcolor: alpha('#091326', 0.18),
+                        }}
+                      >
+                        Open GitHub
+                      </Button>
+                    </Stack>
+                  </Stack>
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 4 }}>
+                  <Paper
+                    sx={{
+                      p: 3,
+                      borderRadius: 6,
+                      background: alpha('#081120', 0.42),
+                      backdropFilter: 'blur(18px)',
+                      border: `1px solid ${alpha('#67e8f9', 0.12)}`,
+                    }}
+                  >
+                    <Stack spacing={2}>
+                      <Stack direction="row" justifyContent="space-between" alignItems="center">
+                        <Typography variant="h6">SYSTEM SIGNALS</Typography>
+                        <Chip
+                          size="small"
+                          label="ACTIVE"
+                          sx={{
+                            bgcolor: alpha('#34d399', 0.12),
+                            color: '#7cf6bf',
+                          }}
+                        />
+                      </Stack>
+                      {signals.map((item, index) => (
+                        <Box key={item.label}>
+                          <Typography variant="body2" color="primary.light">
+                            {item.label}
+                          </Typography>
+                          <Typography variant="body1" sx={{ mt: 0.5 }}>
+                            {item.value}
+                          </Typography>
+                          {index < signals.length - 1 ? (
+                            <Divider sx={{ mt: 1.5, borderColor: alpha('#9ed7ff', 0.08) }} />
+                          ) : null}
+                        </Box>
+                      ))}
+                    </Stack>
+                  </Paper>
+                </Grid>
+              </Grid>
+            </Stack>
+          </Box>
 
           <Grid container spacing={3}>
             <Grid size={{ xs: 12, md: 8 }}>
-              <Card id="projects" sx={{ borderRadius: 7 }}>
+              <Card
+                id="projects"
+                sx={{
+                  borderRadius: 7,
+                  background: alpha('#091326', 0.22),
+                }}
+              >
                 <CardContent sx={{ p: { xs: 3, md: 4 } }}>
                   <Stack spacing={1.5} sx={{ mb: 3 }}>
                     <Typography variant="overline" color="primary.light">
@@ -249,8 +256,7 @@ export default function App() {
                           sx={{
                             height: '100%',
                             borderRadius: 6,
-                            background:
-                              'linear-gradient(180deg, rgba(10,16,33,0.9) 0%, rgba(9,19,38,0.75) 100%)',
+                            background: alpha('#0b152b', 0.34),
                           }}
                         >
                           <CardContent sx={{ p: 3 }}>
@@ -283,7 +289,7 @@ export default function App() {
 
             <Grid size={{ xs: 12, md: 4 }}>
               <Stack spacing={3}>
-                <Card sx={{ borderRadius: 7 }}>
+                <Card sx={{ borderRadius: 7, background: alpha('#091326', 0.22) }}>
                   <CardContent sx={{ p: 3 }}>
                     <Stack spacing={2}>
                       <Typography variant="overline" color="primary.light">
@@ -300,7 +306,7 @@ export default function App() {
                   </CardContent>
                 </Card>
 
-                <Card sx={{ borderRadius: 7 }}>
+                <Card sx={{ borderRadius: 7, background: alpha('#091326', 0.22) }}>
                   <CardContent sx={{ p: 3 }}>
                     <Stack spacing={2}>
                       <Typography variant="overline" color="primary.light">
