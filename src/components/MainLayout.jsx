@@ -12,7 +12,7 @@ const navItems = [
 const navLinkSx = {
   px: 1.5,
   py: 0.8,
-  borderBottom: '1px solid transparent',
+  border: `1px solid ${alpha('#8ec5ff', 0.08)}`,
   color: 'text.secondary',
   textDecoration: 'none',
   fontWeight: 700,
@@ -21,8 +21,10 @@ const navLinkSx = {
   transition: 'border-color 180ms ease, color 180ms ease, background-color 180ms ease',
   '&.active': {
     color: 'primary.light',
-    borderBottomColor: alpha('#67e8f9', 0.28),
-    backgroundColor: alpha('#67e8f9', 0.03),
+    borderColor: alpha('#67e8f9', 0.26),
+    background:
+      'linear-gradient(180deg, rgba(103, 232, 249, 0.12) 0%, rgba(103, 232, 249, 0.03) 100%)',
+    boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.06)}`,
   },
 }
 
@@ -59,7 +61,8 @@ export default function MainLayout() {
                 sx={{
                   bgcolor: 'transparent',
                   color: 'primary.light',
-                  border: `1px solid ${alpha('#67e8f9', 0.16)}`,
+                  border: `1px solid ${alpha('#67e8f9', 0.24)}`,
+                  boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.04)}`,
                 }}
               />
               <Typography variant="body2" color="text.secondary">
@@ -88,9 +91,9 @@ export default function MainLayout() {
                 href="https://github.com/LeaderJiang"
                 sx={{
                   alignSelf: 'flex-start',
-                  borderColor: alpha('#9ed7ff', 0.12),
+                  borderColor: alpha('#9ed7ff', 0.18),
                   color: 'text.primary',
-                  bgcolor: 'transparent',
+                  bgcolor: alpha('#091326', 0.18),
                 }}
               >
                 Open GitHub

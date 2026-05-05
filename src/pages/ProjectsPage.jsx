@@ -6,6 +6,11 @@ import { frameSx, linePanelSx } from '../ui'
 export default function ProjectsPage() {
   return (
     <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+      <Box className="hud-scan" />
+      <Box className="hud-corner hud-corner-tl" />
+      <Box className="hud-corner hud-corner-tr" />
+      <Box className="hud-corner hud-corner-bl" />
+      <Box className="hud-corner hud-corner-br" />
       <CardContent sx={{ p: { xs: 3, md: 4 } }}>
         <Stack spacing={1.5} sx={{ mb: 3 }}>
           <Typography variant="overline" color="primary.light">
@@ -20,6 +25,9 @@ export default function ProjectsPage() {
         <Grid container spacing={2.5}>
           <Grid size={{ xs: 12, lg: 8 }}>
             <Card sx={{ height: '100%', borderRadius: 1.25, ...frameSx }}>
+              <Box className="hud-scan" />
+              <Box className="hud-corner hud-corner-tl" />
+              <Box className="hud-corner hud-corner-br" />
               <CardContent sx={{ p: { xs: 3, md: 4 } }}>
                 <Stack spacing={2.5}>
                   <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={2}>
@@ -82,6 +90,8 @@ export default function ProjectsPage() {
           <Grid size={{ xs: 12, lg: 4 }}>
             <Stack spacing={2.5} sx={{ height: '100%' }}>
               <Card sx={{ borderRadius: 1.25, ...frameSx }}>
+                <Box className="hud-corner hud-corner-tl" />
+                <Box className="hud-corner hud-corner-br" />
                 <CardContent sx={{ p: 3 }}>
                   <Stack spacing={1.5}>
                     <Typography variant="body2" color="primary.light">
@@ -96,6 +106,8 @@ export default function ProjectsPage() {
               </Card>
 
               <Card sx={{ flexGrow: 1, borderRadius: 1.25, ...frameSx, borderStyle: 'dashed' }}>
+                <Box className="hud-corner hud-corner-tl" />
+                <Box className="hud-corner hud-corner-br" />
                 <CardContent sx={{ p: 3, height: '100%' }}>
                   <Stack justifyContent="space-between" sx={{ height: '100%' }} spacing={3}>
                     <Box>
@@ -118,6 +130,8 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <Grid key={project.title} size={{ xs: 12, md: 6 }}>
               <Card sx={{ height: '100%', borderRadius: 1.25, ...frameSx }}>
+                <Box className="hud-corner hud-corner-tl" />
+                <Box className="hud-corner hud-corner-br" />
                 <CardContent sx={{ p: 3 }}>
                   <Stack spacing={1.5}>
                     <Typography variant="body2" color="primary.light">

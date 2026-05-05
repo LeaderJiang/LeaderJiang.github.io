@@ -65,8 +65,18 @@ export default function HomePage() {
 
       <Grid size={{ xs: 12, md: 4 }}>
         <Paper sx={{ p: 3, borderRadius: 1.25, ...frameSx, ...cutCornerSx }}>
+          <Box className="hud-scan" />
+          <Box className="hud-corner hud-corner-tl" />
+          <Box className="hud-corner hud-corner-tr" />
+          <Box className="hud-corner hud-corner-bl" />
+          <Box className="hud-corner hud-corner-br" />
           <Stack spacing={2}>
-            <Typography variant="h6">SYSTEM SIGNALS</Typography>
+            <Stack direction="row" justifyContent="space-between" alignItems="center">
+              <Typography variant="h6">SYSTEM SIGNALS</Typography>
+              <Typography variant="body2" color="primary.light">
+                03
+              </Typography>
+            </Stack>
             {signals.map((item, index) => (
               <Box key={item.label}>
                 <Typography variant="body2" color="primary.light">
@@ -80,6 +90,9 @@ export default function HomePage() {
                 ) : null}
               </Box>
             ))}
+            <Typography variant="caption" color="text.secondary">
+              FEED / STABLE / PAGE NODE HOME
+            </Typography>
           </Stack>
         </Paper>
       </Grid>
