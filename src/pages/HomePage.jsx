@@ -2,13 +2,24 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
 import { alpha, Box, Button, Divider, Grid, Paper, Stack, Typography } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom'
 import { signals } from '../siteData'
-import { cutCornerSx, frameSx } from '../ui'
+import { cutCornerSx, frameSx, hudCodeSx, hudHeaderSx, hudStatRowSx } from '../ui'
 
 export default function HomePage() {
   return (
     <Grid container spacing={{ xs: 4, md: 6 }} alignItems="start">
       <Grid size={{ xs: 12, md: 8 }}>
         <Stack spacing={2.5} sx={{ pt: { md: 2 } }}>
+          <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 1 }}>
+            <Typography sx={hudCodeSx}>NODE 01</Typography>
+            <Box
+              sx={{
+                width: 96,
+                height: 1,
+                background:
+                  'linear-gradient(90deg, rgba(103, 232, 249, 0.8) 0%, rgba(103, 232, 249, 0.1) 100%)',
+              }}
+            />
+          </Stack>
           <Typography
             variant="h1"
             sx={{ fontSize: { xs: '2.8rem', md: '6.8rem' }, lineHeight: 0.88 }}
@@ -32,6 +43,16 @@ export default function HomePage() {
             我專注於把想法轉成可部署、可維護、可展示的前端產品。這個站點現在已經是多頁結構，
             可延伸成作品站、履歷站或品牌首頁。
           </Typography>
+          <Stack direction={{ xs: 'column', md: 'row' }} spacing={3} sx={{ pt: 1 }}>
+            {['UI SYSTEMS', 'DEPLOYMENT READY', 'SCI-FI IDENTITY'].map((item, index) => (
+              <Stack key={item} spacing={0.5}>
+                <Typography sx={hudCodeSx}>0{index + 1}</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {item}
+                </Typography>
+              </Stack>
+            ))}
+          </Stack>
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
             <Button
               component={RouterLink}
@@ -71,22 +92,32 @@ export default function HomePage() {
           <Box className="hud-corner hud-corner-bl" />
           <Box className="hud-corner hud-corner-br" />
           <Stack spacing={2}>
-            <Stack direction="row" justifyContent="space-between" alignItems="center">
+            <Box sx={hudHeaderSx}>
+              <Typography sx={hudCodeSx}>SIGNAL</Typography>
               <Typography variant="h6">SYSTEM SIGNALS</Typography>
               <Typography variant="body2" color="primary.light">
                 03
               </Typography>
-            </Stack>
+            </Box>
             {signals.map((item, index) => (
-              <Box key={item.label}>
-                <Typography variant="body2" color="primary.light">
-                  {item.label}
-                </Typography>
-                <Typography variant="body1" sx={{ mt: 0.5 }}>
-                  {item.value}
-                </Typography>
+              <Box key={item.label} sx={hudStatRowSx}>
+                <Typography sx={hudCodeSx}>0{index + 1}</Typography>
+                <Box>
+                  <Typography variant="body2" color="primary.light">
+                    {item.label}
+                  </Typography>
+                  <Typography variant="body1" sx={{ mt: 0.5 }}>
+                    {item.value}
+                  </Typography>
+                </Box>
                 {index < signals.length - 1 ? (
-                  <Divider sx={{ mt: 1.5, borderColor: alpha('#9ed7ff', 0.08) }} />
+                  <Divider
+                    sx={{
+                      mt: 1.5,
+                      borderColor: alpha('#9ed7ff', 0.08),
+                      gridColumn: '1 / -1',
+                    }}
+                  />
                 ) : null}
               </Box>
             ))}

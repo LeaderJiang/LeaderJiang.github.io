@@ -1,20 +1,23 @@
 import LaunchIcon from '@mui/icons-material/Launch'
 import TerminalIcon from '@mui/icons-material/Terminal'
-import { alpha, Button, Card, CardContent, Grid, Link, Stack, Typography } from '@mui/material'
+import { alpha, Box, Button, Card, CardContent, Grid, Link, Stack, Typography } from '@mui/material'
 import { capabilities } from '../siteData'
-import { frameSx } from '../ui'
+import { frameSx, hudCodeSx, hudHeaderSx } from '../ui'
 
 export default function AboutPage() {
   return (
     <Grid container spacing={3}>
       <Grid size={{ xs: 12, md: 7 }}>
         <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+          <Box className="hud-corner hud-corner-tl" />
+          <Box className="hud-corner hud-corner-br" />
           <CardContent sx={{ p: { xs: 3, md: 4 } }}>
             <Stack spacing={2}>
-              <Typography variant="overline" color="primary.light">
-                ABOUT NODE
-              </Typography>
-              <Typography variant="h3">Who I Build For</Typography>
+              <Box sx={hudHeaderSx}>
+                <Typography sx={hudCodeSx}>ABOUT</Typography>
+                <Typography variant="h3">Who I Build For</Typography>
+                <Typography sx={hudCodeSx}>AB-01</Typography>
+              </Box>
               <Typography color="text.secondary" sx={{ lineHeight: 1.9 }}>
                 我偏好的工作方式，是把抽象需求拆成清楚的 UI 結構、資料流程與部署成果。這類型的站點可以再往下擴成真實作品介紹、服務說明、聯絡入口，或完整品牌官網。
               </Typography>
@@ -29,12 +32,15 @@ export default function AboutPage() {
       <Grid size={{ xs: 12, md: 5 }}>
         <Stack spacing={3}>
           <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+            <Box className="hud-corner hud-corner-tl" />
+            <Box className="hud-corner hud-corner-br" />
             <CardContent sx={{ p: 3 }}>
               <Stack spacing={2}>
-                <Typography variant="overline" color="primary.light">
-                  CAPABILITIES
-                </Typography>
-                <Typography variant="h4">Core Strengths</Typography>
+                <Box sx={hudHeaderSx}>
+                  <Typography sx={hudCodeSx}>CAPS</Typography>
+                  <Typography variant="h4">Core Strengths</Typography>
+                  <Typography sx={hudCodeSx}>04</Typography>
+                </Box>
                 {capabilities.map((item) => (
                   <Stack key={item} direction="row" spacing={1.5} alignItems="flex-start">
                     <TerminalIcon sx={{ mt: '2px', color: 'primary.main' }} />
@@ -46,12 +52,15 @@ export default function AboutPage() {
           </Card>
 
           <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+            <Box className="hud-corner hud-corner-tl" />
+            <Box className="hud-corner hud-corner-br" />
             <CardContent sx={{ p: 3 }}>
               <Stack spacing={2}>
-                <Typography variant="overline" color="primary.light">
-                  CONTACT LINK
-                </Typography>
-                <Typography variant="h4">Open a Channel</Typography>
+                <Box sx={hudHeaderSx}>
+                  <Typography sx={hudCodeSx}>LINK</Typography>
+                  <Typography variant="h4">Open a Channel</Typography>
+                  <Typography sx={hudCodeSx}>CT-01</Typography>
+                </Box>
                 <Typography color="text.secondary">
                   之後可以替換成你的 email、LinkedIn、作品平台或履歷下載連結。
                 </Typography>

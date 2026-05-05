@@ -1,7 +1,7 @@
 import MemoryIcon from '@mui/icons-material/Memory'
 import { alpha, Box, Card, CardContent, Chip, Grid, Stack, Typography } from '@mui/material'
 import { featuredProject, projects } from '../siteData'
-import { frameSx, linePanelSx } from '../ui'
+import { frameSx, hudCodeSx, hudHeaderSx, linePanelSx } from '../ui'
 
 export default function ProjectsPage() {
   return (
@@ -12,15 +12,14 @@ export default function ProjectsPage() {
       <Box className="hud-corner hud-corner-bl" />
       <Box className="hud-corner hud-corner-br" />
       <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-        <Stack spacing={1.5} sx={{ mb: 3 }}>
-          <Typography variant="overline" color="primary.light">
-            PROJECT ARCHIVE
-          </Typography>
+        <Box sx={hudHeaderSx}>
+          <Typography sx={hudCodeSx}>ARCHIVE</Typography>
           <Typography variant="h3">Selected Builds</Typography>
-          <Typography color="text.secondary">
-            這裡放的是你最值得被看見的建構能力，不只是作品列表，而是你如何定義問題與完成產品。
-          </Typography>
-        </Stack>
+          <Typography sx={hudCodeSx}>PX-02</Typography>
+        </Box>
+        <Typography color="text.secondary" sx={{ mb: 3 }}>
+          這裡放的是你最值得被看見的建構能力，不只是作品列表，而是你如何定義問題與完成產品。
+        </Typography>
 
         <Grid container spacing={2.5}>
           <Grid size={{ xs: 12, lg: 8 }}>
@@ -32,7 +31,7 @@ export default function ProjectsPage() {
                 <Stack spacing={2.5}>
                   <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={2}>
                     <Box>
-                      <Typography variant="body2" color="primary.light">
+                      <Typography sx={hudCodeSx}>
                         FEATURED CASE / 01
                       </Typography>
                       <Typography variant="h4" sx={{ mt: 1 }}>
@@ -72,9 +71,9 @@ export default function ProjectsPage() {
 
                   <Grid container spacing={2}>
                     {featuredProject.metrics.map((item, index) => (
-                      <Grid key={item} size={{ xs: 12, md: 4 }}>
-                        <Box sx={{ p: 2, borderRadius: 1, ...linePanelSx }}>
-                          <Typography variant="body2" color="primary.light">
+                    <Grid key={item} size={{ xs: 12, md: 4 }}>
+                      <Box sx={{ p: 2, borderRadius: 1, ...linePanelSx }}>
+                          <Typography sx={hudCodeSx}>
                             0{index + 1}
                           </Typography>
                           <Typography sx={{ mt: 1 }}>{item}</Typography>
@@ -94,7 +93,7 @@ export default function ProjectsPage() {
                 <Box className="hud-corner hud-corner-br" />
                 <CardContent sx={{ p: 3 }}>
                   <Stack spacing={1.5}>
-                    <Typography variant="body2" color="primary.light">
+                    <Typography sx={hudCodeSx}>
                       PROJECT SIGNAL
                     </Typography>
                     <Typography variant="h5">What I optimize</Typography>
@@ -111,7 +110,7 @@ export default function ProjectsPage() {
                 <CardContent sx={{ p: 3, height: '100%' }}>
                   <Stack justifyContent="space-between" sx={{ height: '100%' }} spacing={3}>
                     <Box>
-                      <Typography variant="body2" color="primary.light">
+                      <Typography sx={hudCodeSx}>
                         DEPLOYMENT MODE
                       </Typography>
                       <Typography variant="h5" sx={{ mt: 1 }}>
@@ -134,7 +133,7 @@ export default function ProjectsPage() {
                 <Box className="hud-corner hud-corner-br" />
                 <CardContent sx={{ p: 3 }}>
                   <Stack spacing={1.5}>
-                    <Typography variant="body2" color="primary.light">
+                    <Typography sx={hudCodeSx}>
                       0{index + 2}
                     </Typography>
                     <Typography variant="h5">{project.title}</Typography>
