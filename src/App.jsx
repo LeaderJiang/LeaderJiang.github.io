@@ -26,13 +26,15 @@ const signals = [
   { label: 'Base Station', value: 'Taiwan / Remote-ready collaboration' },
 ]
 
+const featuredProject = {
+  title: 'Genesis Frontend',
+  summary:
+    '企業流程前端系統，整合儀表板、銷售、出勤與列印流程。核心重點不是堆功能，而是讓高密度操作在同一套視覺語言下仍然清晰、穩定、可維護。',
+  stack: ['React 19', 'Vite', 'MUI 7', 'Chart.js'],
+  metrics: ['Dashboard-first UX', 'Business workflow driven', 'Print-ready interfaces'],
+}
+
 const projects = [
-  {
-    title: 'Genesis Frontend',
-    summary:
-      '企業流程前端系統，整合儀表板、銷售、出勤與列印流程，強調一致的 UI 架構與管理效率。',
-    stack: 'React, Vite, MUI, Charts',
-  },
   {
     title: 'Sci-Fi Personal Hub',
     summary:
@@ -250,22 +252,165 @@ export default function App() {
                   </Stack>
 
                   <Grid container spacing={2.5}>
-                    {projects.map((project, index) => (
-                      <Grid key={project.title} size={{ xs: 12, md: 4 }}>
+                    <Grid size={{ xs: 12, lg: 8 }}>
+                      <Card
+                        sx={{
+                          height: '100%',
+                          borderRadius: 6,
+                          background:
+                            'linear-gradient(135deg, rgba(10,18,38,0.68) 0%, rgba(12,28,58,0.5) 45%, rgba(20,49,98,0.38) 100%)',
+                          position: 'relative',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            position: 'absolute',
+                            top: -60,
+                            right: -40,
+                            width: 220,
+                            height: 220,
+                            borderRadius: '50%',
+                            background:
+                              'radial-gradient(circle, rgba(103,232,249,0.24), transparent 70%)',
+                            filter: 'blur(10px)',
+                          }}
+                        />
+                        <CardContent sx={{ p: { xs: 3, md: 4 } }}>
+                          <Stack spacing={2.5}>
+                            <Stack
+                              direction={{ xs: 'column', sm: 'row' }}
+                              justifyContent="space-between"
+                              spacing={2}
+                            >
+                              <Box>
+                                <Typography variant="body2" color="primary.light">
+                                  FEATURED CASE / 01
+                                </Typography>
+                                <Typography variant="h4" sx={{ mt: 1 }}>
+                                  {featuredProject.title}
+                                </Typography>
+                              </Box>
+                              <Chip
+                                icon={<MemoryIcon />}
+                                label="Flagship Build"
+                                sx={{
+                                  alignSelf: 'flex-start',
+                                  bgcolor: alpha('#67e8f9', 0.12),
+                                  color: 'primary.light',
+                                }}
+                              />
+                            </Stack>
+
+                            <Typography
+                              color="text.secondary"
+                              sx={{ fontSize: '1.04rem', lineHeight: 1.8, maxWidth: 680 }}
+                            >
+                              {featuredProject.summary}
+                            </Typography>
+
+                            <Grid container spacing={1.5}>
+                              {featuredProject.stack.map((item) => (
+                                <Grid key={item}>
+                                  <Chip
+                                    label={item}
+                                    sx={{
+                                      bgcolor: alpha('#7c3aed', 0.16),
+                                      color: '#d8b4fe',
+                                    }}
+                                  />
+                                </Grid>
+                              ))}
+                            </Grid>
+
+                            <Grid container spacing={2}>
+                              {featuredProject.metrics.map((item, index) => (
+                                <Grid key={item} size={{ xs: 12, md: 4 }}>
+                                  <Box
+                                    sx={{
+                                      p: 2,
+                                      borderRadius: 4,
+                                      bgcolor: alpha('#081120', 0.42),
+                                      border: `1px solid ${alpha('#8ec5ff', 0.08)}`,
+                                    }}
+                                  >
+                                    <Typography variant="body2" color="primary.light">
+                                      0{index + 1}
+                                    </Typography>
+                                    <Typography sx={{ mt: 1 }}>{item}</Typography>
+                                  </Box>
+                                </Grid>
+                              ))}
+                            </Grid>
+                          </Stack>
+                        </CardContent>
+                      </Card>
+                    </Grid>
+
+                    <Grid size={{ xs: 12, lg: 4 }}>
+                      <Stack spacing={2.5} sx={{ height: '100%' }}>
                         <Card
                           sx={{
-                            height: '100%',
                             borderRadius: 6,
-                            background: alpha('#0b152b', 0.34),
+                            background: alpha('#0b152b', 0.32),
                           }}
                         >
                           <CardContent sx={{ p: 3 }}>
                             <Stack spacing={1.5}>
                               <Typography variant="body2" color="primary.light">
-                                0{index + 1}
+                                PROJECT SIGNAL
+                              </Typography>
+                              <Typography variant="h5">What I optimize</Typography>
+                              <Typography color="text.secondary">
+                                架構清楚、互動順暢、資料密度高但不混亂，讓產品真的能被使用，而不只是能被展示。
+                              </Typography>
+                            </Stack>
+                          </CardContent>
+                        </Card>
+
+                        <Card
+                          sx={{
+                            flexGrow: 1,
+                            borderRadius: 6,
+                            background: alpha('#081120', 0.3),
+                            borderStyle: 'dashed',
+                          }}
+                        >
+                          <CardContent sx={{ p: 3, height: '100%' }}>
+                            <Stack justifyContent="space-between" sx={{ height: '100%' }} spacing={3}>
+                              <Box>
+                                <Typography variant="body2" color="primary.light">
+                                  DEPLOYMENT MODE
+                                </Typography>
+                                <Typography variant="h5" sx={{ mt: 1 }}>
+                                  From concept to live interface
+                                </Typography>
+                              </Box>
+                              <Typography color="text.secondary">
+                                可以繼續把這裡接成真實案例、履歷下載、聯絡資訊，或串成多頁式作品網站。
+                              </Typography>
+                            </Stack>
+                          </CardContent>
+                        </Card>
+                      </Stack>
+                    </Grid>
+
+                    {projects.map((project, index) => (
+                      <Grid key={project.title} size={{ xs: 12, md: 6 }}>
+                        <Card
+                          sx={{
+                            height: '100%',
+                            borderRadius: 6,
+                            background: alpha('#0b152b', 0.28),
+                          }}
+                        >
+                          <CardContent sx={{ p: 3 }}>
+                            <Stack spacing={1.5}>
+                              <Typography variant="body2" color="primary.light">
+                                0{index + 2}
                               </Typography>
                               <Typography variant="h5">{project.title}</Typography>
-                              <Typography color="text.secondary" sx={{ minHeight: 100 }}>
+                              <Typography color="text.secondary" sx={{ minHeight: 88 }}>
                                 {project.summary}
                               </Typography>
                               <Chip
