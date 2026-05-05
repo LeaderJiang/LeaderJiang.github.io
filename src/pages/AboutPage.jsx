@@ -9,13 +9,14 @@ export default function AboutPage() {
     <Grid container spacing={3}>
       <Grid size={{ xs: 12, md: 7 }}>
         <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+          <Box className="hud-scan" />
           <Box className="hud-corner hud-corner-tl" />
           <Box className="hud-corner hud-corner-br" />
           <CardContent sx={{ p: { xs: 3, md: 4 } }}>
             <Stack spacing={2}>
               <Box sx={hudHeaderSx}>
                 <Typography sx={hudCodeSx}>ABOUT</Typography>
-                <Typography variant="h3">Who I Build For</Typography>
+                <Typography variant="h3">Identity File</Typography>
                 <Typography sx={hudCodeSx}>AB-01</Typography>
               </Box>
               <Typography color="text.secondary" sx={{ lineHeight: 1.9 }}>
@@ -24,6 +25,29 @@ export default function AboutPage() {
               <Typography color="text.secondary" sx={{ lineHeight: 1.9 }}>
                 如果你之後要把內容換成真實履歷、專案經歷、公司資訊或個人品牌敘事，這個結構已經足夠承接。
               </Typography>
+              <Grid container spacing={1.5} sx={{ pt: 1 }}>
+                {[
+                  ['ROLE', 'Frontend system builder'],
+                  ['FOCUS', 'Architecture, product UI, deployment'],
+                  ['OUTPUT', 'Interfaces that can ship'],
+                ].map(([label, text]) => (
+                  <Grid key={label} size={{ xs: 12, md: 4 }}>
+                    <Box
+                      sx={{
+                        p: 2,
+                        border: `1px solid ${alpha('#8ec5ff', 0.11)}`,
+                        background: alpha('#081120', 0.2),
+                        minHeight: '100%',
+                      }}
+                    >
+                      <Typography sx={hudCodeSx}>{label}</Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                        {text}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
             </Stack>
           </CardContent>
         </Card>
@@ -32,6 +56,7 @@ export default function AboutPage() {
       <Grid size={{ xs: 12, md: 5 }}>
         <Stack spacing={3}>
           <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+            <Box className="hud-scan" />
             <Box className="hud-corner hud-corner-tl" />
             <Box className="hud-corner hud-corner-br" />
             <CardContent sx={{ p: 3 }}>
@@ -52,6 +77,7 @@ export default function AboutPage() {
           </Card>
 
           <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+            <Box className="hud-scan" />
             <Box className="hud-corner hud-corner-tl" />
             <Box className="hud-corner hud-corner-br" />
             <CardContent sx={{ p: 3 }}>
