@@ -28,6 +28,7 @@ export default function ProjectsPage() {
               <Card className="page-enter-fast delay-1" sx={{ height: '100%', borderRadius: 1.25, ...frameSx }}>
                 <Box className="hud-scan" />
                 <Box className="hud-scanline" />
+                <Box className="hud-radar" style={{ width: '160px', top: '54%', right: '20px', opacity: 0.36 }} />
                 <Box className="hud-corner hud-corner-tl" />
                 <Box className="hud-corner hud-corner-br" />
                 <CardContent sx={{ p: { xs: 3, md: 4 } }}>
@@ -38,7 +39,7 @@ export default function ProjectsPage() {
                       <Typography sx={hudCodeSx}>PRIORITY</Typography>
                     </Box>
 
-                    <Typography color="text.secondary" sx={{ fontSize: '1.04rem', lineHeight: 1.85 }}>
+                    <Typography className="hud-data-rail" color="text.secondary" sx={{ fontSize: '1.04rem', lineHeight: 1.85, pb: 1.5 }}>
                       {featuredProject.summary}
                     </Typography>
 

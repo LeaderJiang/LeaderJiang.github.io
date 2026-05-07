@@ -4,15 +4,15 @@ export const frameSx = {
   position: 'relative',
   overflow: 'hidden',
   background:
-    'linear-gradient(180deg, rgba(7, 15, 30, 0.42) 0%, rgba(5, 10, 22, 0.22) 100%)',
-  border: `1px solid ${alpha('#8ec5ff', 0.14)}`,
-  boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.03)}`,
+    'linear-gradient(180deg, rgba(7, 15, 30, 0.66) 0%, rgba(5, 10, 22, 0.42) 100%)',
+  border: `1px solid ${alpha('#8ec5ff', 0.18)}`,
+  boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.04)}, inset 0 -18px 36px ${alpha('#081120', 0.28)}`,
   transition: 'transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease',
-  animation: 'hud-pulse 6s ease-in-out infinite',
+  animation: 'hud-pulse 7.2s ease-in-out infinite',
   '&:hover': {
     transform: 'translateY(-2px)',
-    borderColor: alpha('#67e8f9', 0.26),
-    boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.05)}, 0 0 22px ${alpha('#67e8f9', 0.08)}`,
+    borderColor: alpha('#67e8f9', 0.3),
+    boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.07)}, 0 0 30px ${alpha('#67e8f9', 0.1)}`,
   },
   '&::before': {
     content: '""',
@@ -70,8 +70,8 @@ export const frameSx = {
     position: 'absolute',
     inset: 0,
     background:
-      'linear-gradient(180deg, transparent 0%, rgba(103, 232, 249, 0.035) 48%, transparent 100%)',
-    backgroundSize: '100% 18px',
+      'linear-gradient(180deg, transparent 0%, rgba(103, 232, 249, 0.03) 48%, transparent 100%)',
+    backgroundSize: '100% 22px',
     pointerEvents: 'none',
   },
   '& .hud-scanline': {
@@ -89,8 +89,8 @@ export const frameSx = {
 }
 
 export const linePanelSx = {
-  background: 'transparent',
-  border: `1px solid ${alpha('#8ec5ff', 0.11)}`,
+  background: alpha('#081120', 0.12),
+  border: `1px solid ${alpha('#8ec5ff', 0.14)}`,
   boxShadow: 'none',
   position: 'relative',
   '&::before': {
@@ -115,11 +115,12 @@ export const hudHeaderSx = {
   alignItems: 'center',
   gap: 1.5,
   mb: 2,
+  minHeight: 28,
   '&::after': {
     content: '""',
     height: 1,
     background:
-      'linear-gradient(90deg, rgba(103, 232, 249, 0.5) 0%, rgba(103, 232, 249, 0.08) 75%, transparent 100%)',
+      'linear-gradient(90deg, rgba(103, 232, 249, 0.65) 0%, rgba(103, 232, 249, 0.12) 75%, transparent 100%)',
   },
 }
 

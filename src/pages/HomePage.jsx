@@ -13,6 +13,9 @@ export default function HomePage() {
       >
         <Box className="hud-scan" />
         <Box className="hud-scanline" />
+        <Box className="hud-radar">
+          <Box className="hud-orbit-dot" sx={{ top: '22%', right: '18%' }} />
+        </Box>
         <Box className="hud-corner hud-corner-tl" />
         <Box className="hud-corner hud-corner-tr" />
         <Box className="hud-corner hud-corner-bl" />
@@ -27,6 +30,7 @@ export default function HomePage() {
               </Box>
 
               <Typography
+                className="hud-data-rail"
                 variant="h1"
                 sx={{ fontSize: { xs: '2.9rem', md: '7.2rem' }, lineHeight: 0.86 }}
               >
@@ -63,8 +67,8 @@ export default function HomePage() {
                       sx={{
                         p: 2,
                         minHeight: '100%',
-                        border: `1px solid ${alpha('#8ec5ff', 0.11)}`,
-                        background: alpha('#081120', 0.16),
+                        border: `1px solid ${alpha('#8ec5ff', 0.14)}`,
+                        background: alpha('#081120', 0.22),
                       }}
                     >
                       <Typography className="hud-code" sx={hudCodeSx}>{code}</Typography>
@@ -151,7 +155,7 @@ export default function HomePage() {
                     ) : null}
                   </Box>
                 ))}
-                <Divider sx={{ borderColor: alpha('#9ed7ff', 0.08) }} />
+                <Divider sx={{ borderColor: alpha('#9ed7ff', 0.12) }} />
                 <Grid container spacing={1.25}>
                   {[
                     ['01', 'Portfolio routing active'],

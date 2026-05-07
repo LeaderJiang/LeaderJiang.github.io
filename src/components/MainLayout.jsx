@@ -35,6 +35,18 @@ export default function MainLayout() {
       sx={{
         position: 'relative',
         minHeight: '100vh',
+        '&::after': {
+          content: '""',
+          position: 'fixed',
+          inset: '8% 4% auto auto',
+          width: '22vw',
+          maxWidth: 280,
+          height: 1,
+          background:
+            'linear-gradient(90deg, rgba(103, 232, 249, 0.45) 0%, transparent 100%)',
+          pointerEvents: 'none',
+          opacity: 0.6,
+        },
         '&::before': {
           content: '""',
           position: 'fixed',
