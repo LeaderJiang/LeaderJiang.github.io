@@ -6,16 +6,17 @@ import { frameSx, hudCodeSx, hudHeaderSx } from '../ui'
 
 export default function AboutPage() {
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={{ xs: 3, md: 4 }}>
       <Grid size={{ xs: 12, md: 7 }}>
-        <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+        <Card className="page-enter" sx={{ borderRadius: 1.5, ...frameSx }}>
+          <Box className="hud-scanline" />
           <Box className="hud-scan" />
           <Box className="hud-corner hud-corner-tl" />
           <Box className="hud-corner hud-corner-br" />
           <CardContent sx={{ p: { xs: 3, md: 4 } }}>
             <Stack spacing={2}>
               <Box sx={hudHeaderSx}>
-                <Typography sx={hudCodeSx}>ABOUT</Typography>
+                <Typography className="hud-code" sx={hudCodeSx}>ABOUT</Typography>
                 <Typography variant="h3">Identity File</Typography>
                 <Typography sx={hudCodeSx}>AB-01</Typography>
               </Box>
@@ -25,7 +26,7 @@ export default function AboutPage() {
               <Typography color="text.secondary" sx={{ lineHeight: 1.9 }}>
                 如果你之後要把內容換成真實履歷、專案經歷、公司資訊或個人品牌敘事，這個結構已經足夠承接。
               </Typography>
-              <Grid container spacing={1.5} sx={{ pt: 1 }}>
+              <Grid container spacing={1.5} sx={{ pt: 1, maxWidth: 760 }}>
                 {[
                   ['ROLE', 'Frontend system builder'],
                   ['FOCUS', 'Architecture, product UI, deployment'],
@@ -36,11 +37,11 @@ export default function AboutPage() {
                       sx={{
                         p: 2,
                         border: `1px solid ${alpha('#8ec5ff', 0.11)}`,
-                        background: alpha('#081120', 0.2),
+                        background: alpha('#081120', 0.14),
                         minHeight: '100%',
                       }}
                     >
-                      <Typography sx={hudCodeSx}>{label}</Typography>
+                      <Typography className="hud-code" sx={hudCodeSx}>{label}</Typography>
                       <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
                         {text}
                       </Typography>
@@ -54,15 +55,15 @@ export default function AboutPage() {
       </Grid>
 
       <Grid size={{ xs: 12, md: 5 }}>
-        <Stack spacing={3}>
-          <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+        <Stack spacing={2.25}>
+          <Card className="page-enter-fast delay-1" sx={{ borderRadius: 1.5, ...frameSx }}>
             <Box className="hud-scan" />
             <Box className="hud-corner hud-corner-tl" />
             <Box className="hud-corner hud-corner-br" />
             <CardContent sx={{ p: 3 }}>
               <Stack spacing={2}>
                 <Box sx={hudHeaderSx}>
-                  <Typography sx={hudCodeSx}>CAPS</Typography>
+                  <Typography className="hud-code" sx={hudCodeSx}>CAPS</Typography>
                   <Typography variant="h4">Core Strengths</Typography>
                   <Typography sx={hudCodeSx}>04</Typography>
                 </Box>
@@ -76,14 +77,14 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card sx={{ borderRadius: 1.5, ...frameSx }}>
+          <Card className="page-enter-fast delay-2" sx={{ borderRadius: 1.5, ...frameSx }}>
             <Box className="hud-scan" />
             <Box className="hud-corner hud-corner-tl" />
             <Box className="hud-corner hud-corner-br" />
             <CardContent sx={{ p: 3 }}>
               <Stack spacing={2}>
                 <Box sx={hudHeaderSx}>
-                  <Typography sx={hudCodeSx}>LINK</Typography>
+                  <Typography className="hud-code" sx={hudCodeSx}>LINK</Typography>
                   <Typography variant="h4">Open a Channel</Typography>
                   <Typography sx={hudCodeSx}>CT-01</Typography>
                 </Box>

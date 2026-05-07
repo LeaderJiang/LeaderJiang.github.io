@@ -31,6 +31,7 @@ const navLinkSx = {
 export default function MainLayout() {
   return (
     <Box
+      className="hud-ambient-grid"
       sx={{
         position: 'relative',
         minHeight: '100vh',
@@ -56,6 +57,7 @@ export default function MainLayout() {
           >
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ xs: 'flex-start', sm: 'center' }}>
               <Chip
+                className="page-enter-fast"
                 icon={<SensorsIcon />}
                 label="Personal Command Interface"
                 sx={{
@@ -74,6 +76,7 @@ export default function MainLayout() {
               <Stack direction="row" spacing={1}>
                 {navItems.map((item) => (
                   <Box
+                    className="page-enter-fast"
                     key={item.to}
                     component={NavLink}
                     to={item.to}
@@ -86,6 +89,7 @@ export default function MainLayout() {
               </Stack>
 
               <Button
+                className="page-enter-fast"
                 variant="outlined"
                 startIcon={<GitHubIcon />}
                 href="https://github.com/LeaderJiang"

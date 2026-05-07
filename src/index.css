@@ -13,3 +13,125 @@ body {
 a {
   color: inherit;
 }
+
+@keyframes hud-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hud-fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hud-grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 22px, 0);
+  }
+}
+
+@keyframes hud-scanline {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.55;
+  }
+
+  85% {
+    opacity: 0.2;
+  }
+
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes hud-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(103, 232, 249, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 24px rgba(103, 232, 249, 0.12);
+  }
+}
+
+@keyframes hud-line-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    filter: brightness(1);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.25);
+  }
+}
+
+@keyframes hud-blink {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: hud-fade-up 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.page-enter-fast {
+  animation: hud-fade-up 560ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.page-enter-side {
+  animation: hud-fade-right 760ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.delay-1 {
+  animation-delay: 90ms;
+}
+
+.delay-2 {
+  animation-delay: 180ms;
+}
+
+.delay-3 {
+  animation-delay: 270ms;
+}
+
+.hud-code {
+  animation: hud-blink 3.2s ease-in-out infinite;
+}
+
+.hud-ambient-grid::before {
+  animation: hud-grid-drift 12s linear infinite;
+  will-change: transform;
+}

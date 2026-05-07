@@ -7,6 +7,13 @@ export const frameSx = {
     'linear-gradient(180deg, rgba(7, 15, 30, 0.42) 0%, rgba(5, 10, 22, 0.22) 100%)',
   border: `1px solid ${alpha('#8ec5ff', 0.14)}`,
   boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.03)}`,
+  transition: 'transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease',
+  animation: 'hud-pulse 6s ease-in-out infinite',
+  '&:hover': {
+    transform: 'translateY(-2px)',
+    borderColor: alpha('#67e8f9', 0.26),
+    boxShadow: `inset 0 0 0 1px ${alpha('#67e8f9', 0.05)}, 0 0 22px ${alpha('#67e8f9', 0.08)}`,
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -15,6 +22,7 @@ export const frameSx = {
     width: 42,
     height: 2,
     background: alpha('#67e8f9', 0.92),
+    animation: 'hud-line-glow 3.6s ease-in-out infinite',
   },
   '&::after': {
     content: '""',
@@ -32,6 +40,7 @@ export const frameSx = {
     height: 16,
     borderColor: alpha('#7dd3fc', 0.5),
     pointerEvents: 'none',
+    animation: 'hud-line-glow 4.2s ease-in-out infinite',
   },
   '& .hud-corner-tl': {
     top: 8,
@@ -64,6 +73,18 @@ export const frameSx = {
       'linear-gradient(180deg, transparent 0%, rgba(103, 232, 249, 0.035) 48%, transparent 100%)',
     backgroundSize: '100% 18px',
     pointerEvents: 'none',
+  },
+  '& .hud-scanline': {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: '28%',
+    background:
+      'linear-gradient(180deg, transparent 0%, rgba(103, 232, 249, 0.15) 55%, transparent 100%)',
+    mixBlendMode: 'screen',
+    pointerEvents: 'none',
+    animation: 'hud-scanline 4.8s linear infinite',
   },
 }
 
